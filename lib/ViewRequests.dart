@@ -1,83 +1,68 @@
 import 'package:flutter/material.dart';
 
-class ViewRequests extends StatelessWidget{
+class ViewRequests extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
+    TextStyle textStyle = new TextStyle(color: Colors.white);
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.teal),
+      color: Colors.teal,
+      home: DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: new Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                new FlatButton(
+                  onPressed: () => print('lolo'),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.dehaze, color: Colors.white,),
+                      Text("Solicitudes", style: textStyle,)
+                    ],
+                  ),
+                ),
+                new FlatButton(
+                  color: Colors.blue[500],
+                  onPressed: () => print('funcion de solicitudes'),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.loop, color: Colors.white,),
+                      Text("Solicitudes", style:textStyle ,)
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          bottom: TabBar(
+            tabs: [
+              Tab(text: 'PENDIENTES',),
+              Tab(text: 'REALIZADAS',),
+            ],
+          ),
+        ),
         body: new _ViewRequests(),
       ),
-    );
+    ));
   }
-
 }
 
-class _ViewRequests extends StatefulWidget{
+class _ViewRequests extends StatefulWidget {
   @override
   _ViewRequestsState createState() => new _ViewRequestsState();
 }
 
-class _ViewRequestsState extends State<_ViewRequests>{
+class _ViewRequestsState extends State<_ViewRequests> {
   @override
-  Widget build(BuildContext context) =>
-      new Column(
-        children: <Widget>[
-          new Container(
-            child:
-            new Padding(
-              child:
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    new Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                            new FlatButton(
-                              onPressed: () => {},
-                              padding: EdgeInsets.all(0.0),
-                              child: Row( // Replace with a Row for horizontal icon + text
-                                children: <Widget>[
-                                  Icon(Icons.dehaze),
-                                  Text("Solicitudes"),
-                                ],
-                              ),
-                            ),
+  Widget build(BuildContext context) {
 
-                        ]
-                    ),
-                    new Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        new FlatButton(
-                          onPressed:  () => {},
-                          color: Colors.indigoAccent[400],
-                          child: new Row(
-                            children: <Widget>[
-                              Icon(Icons.loop),
-                              Text('Sincronizar'),
-                            ],
-                          ),
-                        ),
-                      ],
-                    )
-                  ]
-              ),
-              padding: const EdgeInsets.all(24.0),
-            ),
-            padding: const EdgeInsets.all(0.0),
-            alignment: Alignment.topCenter,
-          ),
-          new TabBar(
-            tabs: <Widget>[
-              Text("text"), new Text("text 2")
-            ],
-          ),
-        ],
+         return new Container(
+            color: Colors.white30,
+            child: Text('pepo'),
+          
+
       );
-}
+}}
