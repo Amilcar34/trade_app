@@ -11,7 +11,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-    final white = new TextStyle(color: Colors.black);
+    final white = new TextStyle(color: Colors.white);
     return new Form(
       key: _formKey,
       child: new Column(
@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
         children: <Widget>[
           new Text('Trade',
             style: new TextStyle(fontSize:60.0,
-                color: Colors.teal,
+                color: Colors.white,
                 fontWeight: FontWeight.w600,
                 fontFamily: "Merriweather"
             ),

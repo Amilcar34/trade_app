@@ -8,7 +8,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Scaffold scaffold = new Scaffold(
-      body: Login(),
+      body: new Container(
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+              image: new AssetImage("assets/login.jpeg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child:Login(),
+    ),
     );
     MaterialApp materialApp = MaterialApp(
       home: scaffold,
