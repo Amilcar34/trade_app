@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:trade_app/ViewRequests.dart';
 import 'package:validate/validate.dart';
 
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);
   @override
-  _LoginState createState() => new _LoginState();
+  State<StatefulWidget>  createState() => new _LoginState();
 }
 
 class _LoginState extends State<Login> {
@@ -53,7 +54,11 @@ class _LoginState extends State<Login> {
                 color: Colors.white,
                 onPressed: (){
                   if(_formKey.currentState.validate())
-                    Scaffold.of(context).showSnackBar(SnackBar(content: new Text('Conectando')));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => new ViewRequests()),
+                    );
+                    //  Scaffold.of(context).showSnackBar( SnackBar(  content: new ViewRequests()));
                 },
                 child: Text('INGRESAR', style: TextStyle(color: Colors.teal),),
               ),

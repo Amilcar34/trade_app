@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trade_app/ViewRequests.dart';
 import 'package:trade_app/login.dart';
 
 void main() => runApp(new MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child:Login(),
+          child:new ViewRequests(),
     ),
     );
     MaterialApp materialApp = MaterialApp(
