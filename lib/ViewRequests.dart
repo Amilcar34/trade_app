@@ -5,64 +5,92 @@ class ViewRequests extends StatelessWidget {
   Widget build(BuildContext context) {
     TextStyle textStyle = new TextStyle(color: Colors.white);
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.teal),
-      color: Colors.teal,
-      home: DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: new Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                new FlatButton(
-                  onPressed: () => print('lolo'),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.dehaze, color: Colors.white,),
-                      Text("Solicitudes", style: textStyle,)
-                    ],
-                  ),
+        theme: ThemeData(primarySwatch: Colors.teal),
+        color: Colors.teal,
+        home: DefaultTabController(
+          length: 2,
+          child: Scaffold(
+            appBar: AppBar(
+              title: new Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    new FlatButton(
+                      onPressed: () => print('dolina'),
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.dehaze,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "Solicitudes",
+                            style: textStyle,
+                          )
+                        ],
+                      ),
+                    ),
+                    new FlatButton(
+                      color: Colors.blue[500],
+                      onPressed: () => print('funcion de solicitudes'),
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.loop,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "Solicitudes",
+                            style: textStyle,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                new FlatButton(
-                  color: Colors.blue[500],
-                  onPressed: () => print('funcion de solicitudes'),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.loop, color: Colors.white,),
-                      Text("Solicitudes", style:textStyle ,)
-                    ],
+              ),
+              bottom: TabBar(
+                tabs: [
+                  Tab(
+                    text: 'PENDIENTES',
                   ),
-                ),
+                  Tab(
+                    text: 'REALIZADAS',
+                  ),
+                ],
+              ),
+            ),
+            body: TabBarView(
+              children: [
+                new _Pending(),
+                new _Done(),
               ],
             ),
           ),
-          bottom: TabBar(
-            tabs: [
-              Tab(text: 'PENDIENTES',),
-              Tab(text: 'REALIZADAS',),
-            ],
-          ),
-        ),
-        body: new _ViewRequests(),
-      ),
-    ));
+        ));
   }
 }
 
-class _ViewRequests extends StatefulWidget {
+class _Pending extends StatefulWidget {
   @override
-  _ViewRequestsState createState() => new _ViewRequestsState();
+  _PendingState createState() => new _PendingState();
 }
 
-class _ViewRequestsState extends State<_ViewRequests> {
+class _PendingState extends State<_Pending>{
   @override
   Widget build(BuildContext context) {
+    return Text('pendiente');
+  }
+}
 
-         return new Container(
-            color: Colors.white30,
-            child: Text('pepo'),
-          
+class _Done extends StatefulWidget {
+  @override
+  _DoneState  createState() => new _DoneState();
+}
 
-      );
-}}
+class _DoneState extends State<_Done>{
+  @override
+  Widget build(BuildContext context) {
+    return new Text('realizado');
+  }
+}
