@@ -34,6 +34,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 new TextFormField(
+                  style: white,
                   decoration: InputDecoration(
                     labelText: 'Usuario', labelStyle: white),
                   validator: (v){
@@ -42,6 +43,7 @@ class _LoginState extends State<Login> {
 
                 ),
                 new TextFormField(
+                  style: white,
                   obscureText: true,
                   decoration: InputDecoration(
                     labelText: 'Contraseña', labelStyle: white,
