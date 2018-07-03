@@ -21,7 +21,8 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - assets/login.jpeg
+    - assets/
+
   uses-material-design: true
 
 #fonts:
