@@ -83,11 +83,6 @@ class _PendingState extends State<_Pending> {
                           Icon(Icons.more_vert, color:_grey , size: 13.0,)],
                       ),
                     ),
-                    Text('Lorem ipsum dolor sit amet, consectetur adipiscing ',
-                      overflow: TextOverflow.clip,
-                      maxLines: 3,
-
-                    )
                   ],
                   ),
                 ],

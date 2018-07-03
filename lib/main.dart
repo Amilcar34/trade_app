@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       body: new Container(
           decoration: new BoxDecoration(
             image: new DecorationImage(
-              image: new AssetImage("assets/login.png"),
+              image: new AssetImage("assets/login.jpeg"),
               fit: BoxFit.cover,
             ),
           ),
